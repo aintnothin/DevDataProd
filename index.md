@@ -1,0 +1,64 @@
+---
+title       : Course Project Developing Data
+subtitle    : 
+author      : Steven Burch
+job         : 
+framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
+highlighter : highlight.js  # {highlight.js, prettify, highlight}
+hitheme     : tomorrow      # 
+widgets     : []            # {mathjax, quiz, bootstrap}
+mode        : selfcontained # {standalone, draft}
+knit        : slidify::knit2slides
+---
+
+## Minimum Wage
+
+1. Tipped workers are required to make at least their local Minimum Wage.
+2. If their local Minimum Wage is less than the Federal MW, then the Federal is in effect.
+3. Things have become more complex as Cities now have their own MW (Oakland, San Francisco...)
+
+--- .class #id 
+
+## Some Basics
+
+1. If you are a tipped worker your employer can pay you, in many States, less then the
+local MW.
+2. Some States are required to pay you MW even if you are a tipped worker.
+
+---
+
+## The Basic Math
+
+1. Take your wages + any tips, and divide by the hours worked.
+2. Compare to the local Minimum Wage.
+3. If you are making less than the local Minimum Wage, your employer is usually required to make up the difference.
+
+---
+
+## Simple Example (Code)
+
+
+```r
+library(shiny)
+
+mwCalc <- function(wages, hours, tips) {(wages + tips) / hours}
+
+wages <- 200
+hours <- 40
+tips <- 63.50
+
+Actual_hourly_pay <- mwCalc(wages, hours, tips)
+Actual_hourly_pay 
+```
+
+```
+## [1] 6.5875
+```
+
+---
+
+Minimum Wage issues are becoming a hot topic in the USA.  Workers need to know their local MW and also the local laws to ensure they are being paid fairly.
+
+THE END.
+
+
